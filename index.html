@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        }
+
+        input[type=button] {
+        width: 100%;
+        background-color: #6a9dd8;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        }
+
+        select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0px;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        
+        input[type=date] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=button]:hover {
+        background-color: #446fa0;
+        }
+
+        div {
+        border-radius: 10px;
+        background-color: #d8dcddda;
+        padding: 20px;
+        }
+    </style>
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+
+    <body>
+        <div>
+            <h1>Interplanetary distance calculator</h1>
+            <p><emph>This page calculates the distance between two celestial bodies using ephemerides data provided by the <a href="https://ssp.imcce.fr/webservices/">Solar System Portal</a> of the <a href="https://www.imcce.fr/">Institut de mécanique céleste et de calcul des éphémérides</a> (IMCCE).</emph></p>
+        </div>
+        <br>
+        <div id="form">
+            <form id="form1">
+                <label for="Form1-1-type">Type of first celestial body</label>
+                <select id="Form1-1-type" required>
+                    <option value="p">Planet</option>
+                    <option value="dp">Dwarf planet</option>
+                    <option value="a">Asteroid</option>
+                    <option value="c">Comet</option>
+                    <option value="s">Natural Satellite</option>
+                </select>
+                <br>
+                <label for="Form1-1">ID/Name of fist celestial body</label>
+                <input type="text" id="Form1-1" required>
+                <br>
+                <label for="Form1-2-type">Type of second celestial body</label>
+                <select id="Form1-2-type" required>
+                    <option value="p">Planet</option>
+                    <option value="dp">Dwarf planet</option>
+                    <option value="a">Asteroid</option>
+                    <option value="c">Comet</option>
+                    <option value="s">Natural Satellite</option>
+                </select>
+                <br>
+                <label for="Form1-2">ID/Name of second celestial body</label>
+                <input type="text" id="Form1-2" required>
+                <br>
+                <label for="Form1-3">Date (today by default)</label>
+                <input type="date" id="Form1-3" required>
+                <br>
+                <input type="button" value="Calculate" id="buttonForm1">
+            </form>
+            <p>
+                Please insert names of celestial bodies as defined by the <a href="https://planetarynames.wr.usgs.gov">Working Group for Planetary System Nomenclature.</a><br>
+                Examples include: Mars, Earth, Ceres, 501, etc.
+            </p>
+        </div>
+        <br><br>
+        <div>
+            <p>The distance between the two celestial bodies will be shown below.</p>
+            <p id="paragraph_result"></p>
+        </div>
+        <script type="text/javascript" src="script.js"></script>
+    </body>
+
+</html>
